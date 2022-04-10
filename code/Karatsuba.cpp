@@ -3,13 +3,11 @@
 using hvect = vector<modulo<>>::iterator;
 using hcvect = vector<modulo<>>::const_iterator;
 
-
 void add(hcvect abegin, hcvect aend, hvect ans)
 {
 	for (auto it = abegin; it != aend; ++it, ++ans)
 		*ans += *it;
 }
-
 
 void sub(hcvect abegin, hcvect aend, hvect ans)
 {
@@ -17,14 +15,12 @@ void sub(hcvect abegin, hcvect aend, hvect ans)
 		*ans -= *it;
 }
 
-
 void stupid(int siz, hcvect abegin, hcvect bbegin, hvect ans)
 {
 	for (auto a = abegin; a != abegin + siz; ++a, ans -= (siz - 1))
 		for (auto b = bbegin; b != bbegin + siz; ++b, ++ans)
 			*ans += *a * *b;
 }
-
 
 void Karatsuba(size_t siz, hcvect abegin, hcvect bbegin, hvect ans, hvect small, hvect big, hvect sum)
 {
@@ -58,7 +54,6 @@ void Karatsuba(size_t siz, hcvect abegin, hcvect bbegin, hvect ans, hvect small,
 	add(big, big + siz, ans + siz);
 	sub(big, big + siz, ans + siz / 2);
 }
-
 
 void mult(vector<modulo<>> a, vector<modulo<>> b, vector<modulo<>> &c)
 {

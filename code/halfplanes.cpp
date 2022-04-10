@@ -1,14 +1,5 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
-using ll = long long;
-using ull = unsigned long long;
-using ld = long double;
-
 using pnti = complex<int>;
 using pntd = complex<ld>;
-
 
 ll operator%(const pnti &a, const pnti &b)
 {
@@ -21,7 +12,6 @@ ld operator%(const pntd &a, const pntd &b)
 	return a.real() * b.imag() - a.imag() * b.real();
 }
 
-
 namespace std
 {
 	template<class T>
@@ -32,7 +22,6 @@ namespace std
 		return a.real() < b.real();
 	}
 }
-
 
 pntd line_intersect(const pnti &a, const pnti &b, const pnti &c, const pnti &d)
 {
@@ -49,12 +38,10 @@ pntd line_intersect(const pnti &a, const pnti &b, const pnti &c, const pnti &d)
 	return ans / (ld) det;
 }
 
-
 pntd conv(const pnti &x)
 {
 	return pntd{(ld) x.real(), (ld) x.imag()};
 }
-
 
 auto halfplane_intesection(const vector<pair<pnti, pnti>> &hp)
 {
